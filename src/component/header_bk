@@ -1,0 +1,18 @@
+import React,{Fragment} from 'react';
+import './header.css';
+
+const header = () => {
+    return (
+        <Fragment>
+                <header>
+                    <div className="logo">React App</div>
+                    <center>
+                        <input/>
+                        <div style={{color:'white'}}>User Text Here</div>
+                    </center>
+                </header>
+        </Fragment>
+    )
+}
+
+export default header;
