@@ -1,36 +1,43 @@
 import React,{Component, Fragment} from "react";
-// import "./header.css";
+import "./header.css";
 
-class Header extends React.Component {
-    render() {
-        const myStyle = {
+class Header extends Component {
 
-            header: {
-                backgroundColor: "teal"
-            },
-
-            logo: {
-                textAlign: "center",
-                fontSize: "30px",
-                color: "white"
-            }
+    constructor() {
+        super()
+        
+        this.state={
+            title:'React App',
+            keyword:'User Text Here'
         }
+    }
+
+    handleChange = (event) => {
+        this.setState({keyword:event.target.value?event.target.value:'User Text Here'})
+        this.props.userText(event.target.value)
+    }
+
+    render() {
         return (
             <Fragment>
-                <header style={myStyle.header}>
-                    <div className="logo" style={myStyle.logo}>React App</div>
+                <header>
+                    <div className="logo">React App</div>
                     <center>
-                        <input/>
-                        <div style={{color:'white'}}>User Text Here</div>
+                        <div>
+                            <select id="dropdown">
+                                <option value="name">Name</option>
+                                <option value="description">Description</option>
+                                <option value="uses">Uses</option>
+                            </select>
+                            <input id="input" onChange={this.handleChange}/>
+                        </div>
+                        <div style={{color:'white'}}>{this.state.keyword}</div>
                     </center>
                     <br/>
                 </header>
-
             </Fragment>
         )
-
     }
-
 }
 
 export default Header;

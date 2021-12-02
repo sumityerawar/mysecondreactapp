@@ -6,3 +6,20 @@ header{
     font-size:30px;
     color:white
 }
+
+#dropdown{
+    height: 30px;
+    width: 20%;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+select {
+    height: 60px;
+    width: 40%;
+}
+
+#input{
+    width: 20%;
+    margin-left: 1%;
+}
